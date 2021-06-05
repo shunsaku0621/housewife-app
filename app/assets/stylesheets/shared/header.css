@@ -5,6 +5,7 @@
 .top-page-header{
   background-color: #fff;
   width: 100vw;
+  /* height:75px; */
   display: flex;
   justify-content: space-between;
 }
@@ -14,7 +15,7 @@
 }
 .header-title h1{
   font-size:20px;
-  margin-top:15px;
+  margin-top:5vh;
 }
 .header-icon {
   width: 10vw;
@@ -31,7 +32,7 @@
   display: flex;
   /* background-color: aqua;  */
   margin-right: 30px;
-  margin-top:25px;
+  margin-top:5vh;
 }
 
 .main-list{
@@ -41,7 +42,7 @@
 .lists-right{
   display: flex;
   /* background-color:brown; */
-  margin-top:25px;
+  margin-top:5vh;
 }
 .login{
   margin-right:10px;

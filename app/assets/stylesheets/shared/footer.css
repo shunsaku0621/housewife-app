@@ -1,0 +1,13 @@
+footer{
+  background-color:#ECECEC;
+  height:100px;
+}
+
+
+.footer-title p{
+  font-size:10px;
+  font-family: "Hiragino Kaku Gothic Pro";
+  text-align: center;
+  line-height:100px;
+  color: #333333;
+}
