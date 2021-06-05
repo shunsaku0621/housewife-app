@@ -1,0 +1,50 @@
+
+
+/* header */
+
+.top-page-header{
+  background-color: #fff;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+.header-title{
+  display: flex;
+  /* background-color:coral; */
+}
+.header-title h1{
+  font-size:20px;
+  margin-top:15px;
+}
+.header-icon {
+  width: 10vw;
+  margin-right:5px;
+}
+
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.lists-left{
+  display: flex;
+  /* background-color: aqua;  */
+  margin-right: 30px;
+  margin-top:25px;
+}
+
+.main-list{
+  margin-right:10px;
+}
+
+.lists-right{
+  display: flex;
+  /* background-color:brown; */
+  margin-top:25px;
+}
+.login{
+  margin-right:10px;
+}
+
+
