@@ -7,6 +7,7 @@
 .main-top{
   text-align:center;
   padding-top:100px;
+  margin-bottom:130px
 }
 .main-top h1{
   font-size:50px;
@@ -14,4 +15,10 @@
 }
 .main-top h2{
   font-size:20px;
+}
+
+
+.menu-main-list{
+  display: flex;
+  justify-content: space-around;
 }
