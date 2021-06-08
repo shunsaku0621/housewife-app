@@ -1,0 +1,46 @@
+<%= form_with model: @post, url: posts_path, class:'form-wrap', local: true do |f| %>
+
+
+  <div class='message-form'>
+
+
+    <div class="message-field">
+      <%= f.label :title,  "タイトル" %>
+      <%= f.text_field :title, class:"input-message" %>
+    </div>
+
+    <div class="message-field">
+    <%= f.label :title,  "ジャンル" %>
+     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+
+    <div class="message-field">
+      <%= f.label :text,  "テキスト" %>
+      <%= f.text_area :text, class:"input-message" %>
+    </div>
+
+    <div class="message-field">
+      <p>
+        クリックしてファイルをアップロード※任意
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+
+
+    <div class="tag-field", id='tag-field'>
+      <%= f.label :name, "タグ" %>
+      <%= f.text_field :name, class:"input-tag" %>
+    </div>
+
+
+    <div id="search-result">
+    </div>
+
+
+  </div>
+
+
+  <div class="submit-post">
+    <%= f.submit "Send", class: "submit-btn" %>
+  </div>
+<% end %>
