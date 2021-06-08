@@ -79,7 +79,7 @@ Things you may want to cover:
 - has_many :posts, through: :post_tag_relations
 
 
-## posts_tag_relation テーブル
+## post_tag_relation テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
