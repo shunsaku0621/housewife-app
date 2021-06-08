@@ -60,8 +60,37 @@ Things you may want to cover:
 
 ### Association
 
+- has_many :post_tag_relations
+- has_many :tags, through: :post_tag_relations
 - belongs_to :user
-- has_many :comments
+- has_one_attached :image
+
+
+## tags テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     |  uniqueness: true              |  
+
+
+### Association
+
+- has_many :post_tag_relations
+- has_many :posts, through: :post_tag_relations
+
+
+## posts_tag_relation テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| post          | references | null: false, foreign_key: true |
+| tag           | references | null: false, foreign_kei: true |    
+
+
+### Association
+
+- belongs_to :post
+- belongs_to :tag
 
 
 ## comments テーブル
