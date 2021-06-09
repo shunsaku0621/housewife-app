@@ -34,6 +34,10 @@
   text-decoration: none;
 }
 
+.message{
+  background-color:#F0EEE3;
+}
+
 
 .message-wrap{
   width: 100%;
