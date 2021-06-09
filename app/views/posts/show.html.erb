@@ -33,13 +33,24 @@
   </div>
   <div class="show-sub">
     <div class="show-new-post">
-      
         <p>悩み相談や雑談など何でもOK！</p>
         <div class="show-post-sub">
           <%= link_to "New Post", new_post_path, class:"show-post"%>
         </div>
-      
     </div>
+
+
+
+    <div class="show-edit-delete">
+      <ul>
+        <li class="show-post-sub-edit"><%= link_to "編集", new_post_path, class:"show-post-edit"%></li>
+        <li class="show-post-sub-delete"><%= link_to "削除", new_post_path, class:"show-post-delete"%></li>
+      </ul>
+    </div>
+
+
+
+
   </div>
   
 </div>
