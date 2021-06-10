@@ -43,8 +43,8 @@
 
     <div class="show-edit-delete">
       <ul>
-        <li class="show-post-sub-edit"><%= link_to "編集", new_post_path, class:"show-post-edit"%></li>
-        <li class="show-post-sub-delete"><%= link_to "削除", new_post_path, class:"show-post-delete"%></li>
+        <li class="show-post-sub-edit"><%= link_to "編集", edit_post_path(@post.id), class:"show-post-edit"%></li>
+        <li class="show-post-sub-delete"><%= link_to "削除", post_path(@post.id), method: :delete, class:"show-post-delete"%></li>
       </ul>
     </div>
 
