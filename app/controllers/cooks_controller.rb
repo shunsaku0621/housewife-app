@@ -5,4 +5,15 @@ class CooksController < ApplicationController
   def new
     @cook = Cook.new
   end
+
+  def create
+  end
+
+
+
+
+
+
+  private
+    
 end
