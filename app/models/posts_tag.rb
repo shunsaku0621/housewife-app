@@ -6,7 +6,6 @@ class PostsTag
   with_options presence: true do
     validates :title
     validates :text
-    # validates :name
     validates :user_id
   end
 
