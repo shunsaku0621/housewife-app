@@ -14,7 +14,14 @@ class CooksController < ApplicationController
     else
       render "new"
     end
-  end
+  
+    
+
+
+
+
+
+    
 
 
 
