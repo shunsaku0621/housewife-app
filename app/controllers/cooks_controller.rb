@@ -1,5 +1,6 @@
 class CooksController < ApplicationController
   def index
+    @cooks = Cook.all.order(created_at: :desc)
   end
 
   def new
@@ -30,7 +31,7 @@ class CooksController < ApplicationController
 
   private
   def cook_params
-    params.require(:cook).permit(:name, :description, :portion, :point, :reference, :time, :appearance, :memo).merge(user_id: current_user.id)
+    params.require(:cook).permit(:name, :description, :portion, :point, :reference, :time, :appearance, :memo, :image).merge(user_id: current_user.id)
   end
 
   

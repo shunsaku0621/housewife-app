@@ -1,0 +1,21 @@
+.cooks{
+  display: flex;
+  border-top:1px solid #e8e8e8;
+}
+
+.cooks li{
+  padding:10px 0;
+}
+
+
+.cook-li-image{
+  margin-right:30px;
+}
+
+.cook-name{
+  font-size:20px;
+}
+
+.cook-time{
+  margin-right:10px;
+}

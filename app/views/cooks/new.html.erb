@@ -8,6 +8,15 @@
         <%#= render 'shared/error_messages', object: f.object %>
         <div class = 'form-group'>
           <div class='form-text-wrap'>
+            <div class="new-message-field">
+              <p>クリックして料理の写真をアップロード※必須</p>
+              <%= f.file_field :image, id:"new-item-image", class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        
+        <div class = 'form-group'>
+          <div class='form-text-wrap'>
             <label class="form-text">料理名</label>
             <span class="indispensable">※必須</span>
           </div>
