@@ -1,0 +1,35 @@
+.show-cook-inner{
+  width:70%;
+  margin:20px;
+  background-color:#FEFDFC;
+}
+
+.cook-reference{
+  margin-top:30px;
+}
+
+.cook-point{
+  margin:30px 0;
+}
+
+.cook-point h2{
+  font-size:17px;
+}
+
+.cook-title-point{
+  font-weight: bold;
+  margin-top:10px;
+}
+
+.show-cook-other-info{
+  margin:30px 0;
+}
+
+.cook-info h2{
+  font-size:15px;
+}
+
+.cook-other-info{
+  font-size:17px;
+  font-weight: bold;
+}
