@@ -39,6 +39,10 @@ class CooksController < ApplicationController
   end
 
   def destroy
+    @cook = Cook.find(params[:id])
+    if @cook.destroy
+      redirect_to cooks_path
+    end
   end
 
 
