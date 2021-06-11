@@ -1,11 +1,39 @@
-<%= render "shared/header" %>
-<div class="header">
-  <div class="inner-header">
-    <h1 class="title">
-      本日の料理
-    </h1>
-    <li class='new-post'>
-      <%= link_to "料理投稿", new_cook_path, class:"post-btn"%>
-    </li>
+  <%= render "shared/header" %>
+  <div class="header">
+    <div class="inner-header">
+      <h1 class="title">
+        本日の料理
+      </h1>
+      <li class='new-post'>
+        <%= link_to "料理投稿", new_cook_path, class:"post-btn"%>
+      </li>
+    </div>
   </div>
-</div>
+
+
+
+
+  <div class="cook">
+    <% @cooks.each do |cook| %>
+    <div>
+      <ul class="cooks">
+        <li class="cook-li-image">
+          <span> 
+            <%= image_tag cook.image.variant(resize: '150x150'),  class: 'mesage-image' if cook.image.attached? %>
+          </span>
+        </li>
+        <li>
+          <span class="cook-name"><%= link_to cook.name, "#" %></span>
+          <span class="description"><%= cook.description %></span><br>
+          <span class="cook-time">所要時間：<%= cook.time %>分</span>
+          <span class="appearance">人気度：<%= cook.appearance %></span><br>
+          <span class="reference"><%= link_to "作り方", cook.reference, target: :_blank %></span>
+        </li>
+      <ul>
+      </div>
+    <% end %>
+  </div>
+
+
+
+
