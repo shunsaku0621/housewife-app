@@ -48,8 +48,17 @@
           <%= link_to "New Post", new_post_path, class:"show-post"%>
         </div>
     </div>
-  </div>
   
+  
+
+    <div class="show-edit-delete">
+      <ul>
+        <li class="show-post-sub-edit"><%= link_to "編集", edit_cook_path(@cook.id), class:"show-post-edit"%></li>
+        <li class="show-post-sub-delete"><%= link_to "削除", cook_path(@cook.id), method: :delete, class:"show-post-delete"%></li>
+      </ul>
+    </div>
+  </div>
+
 </div>
 
 
