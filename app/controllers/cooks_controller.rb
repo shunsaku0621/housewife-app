@@ -15,7 +15,7 @@ class CooksController < ApplicationController
       render "new"
     end
   
-    
+  end
 
 
 
