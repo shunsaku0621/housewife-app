@@ -24,7 +24,22 @@ class CooksController < ApplicationController
   end
 
 
-    
+  def edit
+    @cook  = Cook.find(params[:id])
+  end
+
+  def update
+    @cook = Cook.new(cook_params)
+    if @cook.valid?
+      @cook.save
+      redirect_to cook_path(@cook)
+    else 
+      render "edit"
+    end
+  end
+
+  def destroy
+  end
 
 
 
