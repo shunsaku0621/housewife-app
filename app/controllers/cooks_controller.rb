@@ -1,5 +1,6 @@
 class CooksController < ApplicationController
   def index
+    @cooks = Cook.all.order(created_at: :desc)
   end
 
   def new
