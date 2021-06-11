@@ -1,0 +1,60 @@
+<%= render "shared/header" %>
+
+
+<div class="show-header">
+  <div class="show-inner-header">
+    <h1 class="show-title">
+      mamaの掲示板
+    </h1>
+  </div>
+</div>
+
+<div class="show">
+
+  <div class="show-cook-inner">
+    <div class="show-inner-title">
+      <h1><%= @cook.name %></h1>
+    </div>
+    <div class="show-image">
+      <%= image_tag @cook.image.variant(resize: '250x250'), class: 'mesage-image' if @cook.image.attached? %>
+    </div>
+
+    <h2><%= @cook.description %></h2>
+    <h2 class="cook-reference">作り方：<%= link_to "#{@cook.reference}", @cook.reference, target: "_blank" %></h2>
+    <h2 class="cook-portion">分量：<span class="cook-other-info"><%= @cook.portion %></span> 人分</h2>
+    <div class="cook-point">
+      <h2 class="cook-title-point">コツ・ポイント</h2>
+      <h2><%= @cook.point %></h2>
+    </div>
+      
+
+    <div class="show-cook-other-info">
+      <div class="cook-info">
+        <h2>所要時間：<span class="cook-other-info"><%= @cook.time %></span>分</span>
+      </h2>
+      </div>
+      <div class="cook-info">
+        <h2>人気度：<span class="cook-other-info"><%= @cook.appearance %><span></h2>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="show-sub">
+    <div class="show-new-post">
+        <p>悩み相談や雑談など何でもOK！</p>
+        <div class="show-post-sub">
+          <%= link_to "New Post", new_post_path, class:"show-post"%>
+        </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+<%= render "shared/footer" %>
