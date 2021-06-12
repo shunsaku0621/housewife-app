@@ -1,6 +1,6 @@
 class CooksController < ApplicationController
   def index
-    @cooks = Cook.all.order(created_at: :desc).page(params[:page]).per(5)
+    @cooks = Cook.includes(:user).order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
