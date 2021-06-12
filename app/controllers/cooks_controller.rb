@@ -11,6 +11,7 @@ class CooksController < ApplicationController
     @cook = Cook.new(cook_params)
     if @cook.valid?
       @cook.save
+      flash[:notice] = '投稿が完了しました'
       return redirect_to cooks_path
     else
       render "new"
@@ -32,6 +33,7 @@ class CooksController < ApplicationController
     @cook = Cook.new(cook_params)
     if @cook.valid?
       @cook.save
+      flash[:notice] = '投稿を編集しました'
       redirect_to cook_path(@cook)
     else 
       render "edit"
@@ -41,6 +43,7 @@ class CooksController < ApplicationController
   def destroy
     @cook = Cook.find(params[:id])
     if @cook.destroy
+      flash[:notice] = '投稿を削除しました'
       redirect_to cooks_path
     end
   end
