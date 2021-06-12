@@ -20,4 +20,6 @@ class User < ApplicationRecord
          end
         end
      
+        has_many :posts
+        has_many :cooks
 end
