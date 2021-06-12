@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @post = PostsTag.new(tweet_params)
     if @post.valid?
       @post.save
+      flash[:notice] = '投稿が完了しました'
       return redirect_to posts_path
     else
       render "new"
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     if post.destroy
+      flash[:notice] = '投稿を削除しました'
       redirect_to posts_path
     end
   end
