@@ -22,4 +22,24 @@ class User < ApplicationRecord
      
         has_many :posts
         has_many :cooks
+        has_many :favorites, dependent: :destroy
+
+
+
+
+        def favorite(cook)
+          Favorite.create(user_id: id, cook_id: cook.id)
+        end
+      
+        # 料理をお気に入り解除する
+        def unfavorite(cook)
+          Favorite.find_by(user_id: id, cook_id: cook.id).destroy
+        end
+      
+        # 現在のユーザーがお気に入り登録してたらtrueを返す
+        def favorite?(cook)
+          !Favorite.find_by(user_id: id, cook_id: cook.id).nil?
+        end
+
+
 end
