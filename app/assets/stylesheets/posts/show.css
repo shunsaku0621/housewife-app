@@ -123,6 +123,12 @@
   margin-top:7px;
 }
 
+.show-post-sub-fav{
+  text-align: center;
+  border:1px solid pink;
+  margin-top:7px;
+}
+
 
 .show-post-edit{
   color: #32CD32;
@@ -133,5 +139,11 @@
 .show-post-delete{
   color: red;
   font-size: 15px;
+  text-decoration: none;
+}
+
+.show-post-fav{
+  color:pink;
+  font-size:15px;
   text-decoration: none;
 }
