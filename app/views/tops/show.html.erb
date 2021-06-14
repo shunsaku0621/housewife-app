@@ -1,0 +1,38 @@
+
+
+
+<% if @favorites.present? %>
+  <%= render "shared/header" %>
+  <div class="header">
+    <div class="inner-header">
+      <h1 class="title">
+        お気に入り料理(<%= @favorites.count%>)
+      </h1>
+    </div>
+  </div>
+
+  <div class="cook">
+      <% @favorites.each do |fav| %>
+      <div>
+        <ul class="cooks">
+          <li class="cook-li-image">
+            <span> 
+              <%= image_tag fav.image.variant(resize: '150x150'),  class: 'mesage-image' if fav.image.attached? %>
+            </span>
+          </li>
+          <li>
+            <span class="cook-name"><%= link_to fav.name, "#" %></span><br>
+            <span class="cook-time">所要時間：<%= fav.time %>分</span>
+            <span class="appearance">人気度：<%= fav.appearance %></span><br>
+            <span class="reference"><%= link_to "作り方", cook_path(fav.id), target: :_blank %></span><br>
+            <span class="cook-created-at">投稿日時: <%= fav.created_at%><span>
+          </li>
+        <ul>
+        </div>
+      <% end %>
+      <%#= paginate @favorites %>
+
+    </div>
+
+<% end %>
+

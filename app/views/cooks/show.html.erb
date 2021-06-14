@@ -56,6 +56,7 @@
       <ul>
         <li class="show-post-sub-edit"><%= link_to "編集", edit_cook_path(@cook.id), class:"show-post-edit"%></li>
         <li class="show-post-sub-delete"><%= link_to "削除", cook_path(@cook.id), method: :delete, class:"show-post-delete"%></li>
+        <li class="show-post-sub-delete"><%= link_to "お気に入り", top_path(@cook.id), class:"show-post-delete"%></li>
       </ul>
     </div>
   </div>
