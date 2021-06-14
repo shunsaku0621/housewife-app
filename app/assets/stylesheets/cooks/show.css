@@ -33,3 +33,11 @@
   font-size:17px;
   font-weight: bold;
 }
+
+/* お気に入り機能 */
+.like-btn-unlike {
+  color: red;
+}
+.like-btn-like {
+  color: grey;
+}
