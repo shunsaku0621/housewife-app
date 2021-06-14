@@ -14,6 +14,7 @@
   <div class="show-cook-inner">
     <div class="show-inner-title">
       <h1><%= @cook.name %></h1>
+      <%= render 'users/favorite_form' %> 
     </div>
     <div class="show-image">
       <%= image_tag @cook.image.variant(resize: '250x250'), class: 'mesage-image' if @cook.image.attached? %>
