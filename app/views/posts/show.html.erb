@@ -1,60 +1,62 @@
-<%= render "shared/header" %>
+<% if @post.present? %>
+
+  <%= render "shared/header" %>
 
 
-<div class="show-header">
-  <div class="show-inner-header">
-    <h1 class="show-title">
-      mamaの掲示板
-    </h1>
-  </div>
-</div>
-
-<div class="show">
-
-  <div class="show-inner">
-    <div class="show-inner-title">
-      <h1><%= @post.title %></h1>
-    </div>
-    <div class="show-main">
-      <ul class="show-genre">
-        <li class="show-genre-title">ジャンル -<li>
-        <li><%= @post.genre.name%></li>
-      </ul>
-      <p class="show-text"><%= @post.text %></p>
-      <div class="show-image">
-        <%= image_tag @post.image.variant(resize: '150x150'), class: 'mesage-image' if @post.image.attached? %>
-      </div>
-      <div class="show-tag">
-        <%@post.tags.each do |tag| %>
-          <%=tag.name%>
-        <%end%>
-      </div>
+  <div class="show-header">
+    <div class="show-inner-header">
+      <h1 class="show-title">
+        mamaの掲示板
+      </h1>
     </div>
   </div>
-  <div class="show-sub">
-    <div class="show-new-post">
-        <p>悩み相談や雑談など何でもOK！</p>
-        <div class="show-post-sub">
-          <%= link_to "New Post", new_post_path, class:"show-post"%>
+
+  <div class="show">
+
+    <div class="show-inner">
+      <div class="show-inner-title">
+        <h1><%= @post.title %></h1>
+      </div>
+      <div class="show-main">
+        <ul class="show-genre">
+          <li class="show-genre-title">ジャンル -<li>
+          <li><%= @post.genre.name%></li>
+        </ul>
+        <p class="show-text"><%= @post.text %></p>
+        <div class="show-image">
+          <%= image_tag @post.image.variant(resize: '150x150'), class: 'mesage-image' if @post.image.attached? %>
         </div>
+        <div class="show-tag">
+          <%@post.tags.each do |tag| %>
+            <%=tag.name%>
+          <%end%>
+        </div>
+      </div>
     </div>
+    <div class="show-sub">
+      <div class="show-new-post">
+          <p>悩み相談や雑談など何でもOK！</p>
+          <div class="show-post-sub">
+            <%= link_to "New Post", new_post_path, class:"show-post"%>
+          </div>
+      </div>
 
 
 
-    <div class="show-edit-delete">
-      <ul>
-        <li class="show-post-sub-edit"><%= link_to "編集", edit_post_path(@post.id), class:"show-post-edit"%></li>
-        <li class="show-post-sub-delete"><%= link_to "削除", post_path(@post.id), method: :delete, class:"show-post-delete"%></li>
-      </ul>
+      <div class="show-edit-delete">
+        <ul>
+          <li class="show-post-sub-edit"><%= link_to "編集", edit_post_path(@post.id), class:"show-post-edit"%></li>
+          <li class="show-post-sub-delete"><%= link_to "削除", post_path(@post.id), method: :delete, class:"show-post-delete"%></li>
+        </ul>
+      </div>
+
+
+
+
     </div>
-
-
-
-
+    
   </div>
-  
-</div>
-
+<% end %>
 
 
 
