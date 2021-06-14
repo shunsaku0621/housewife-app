@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: "tops#index"
   resources :tops, only: [:index]
   resources :posts
-  resources :cooks
+  resources :cooks do 
+    resource :favorites, only: [:create, :destroy]
+  end
 end
