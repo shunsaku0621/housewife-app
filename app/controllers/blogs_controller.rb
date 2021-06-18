@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.page(params[:page]).per(3)
     @blog = Blog.new
   end
 
@@ -16,6 +16,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_parameter)
     if @blog.valid?
       @blog.save
+      flash[:notice] = '予定を登録しました'
       redirect_to blogs_path
     else
       render "new"
@@ -28,6 +29,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
+    flash[:notice] = '予定を削除しました'
     redirect_to blogs_path
   end
 
@@ -38,6 +40,7 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_parameter)
+      flash[:notice] = '予定を変更しました'
       redirect_to blogs_path
     else
       render 'edit'
