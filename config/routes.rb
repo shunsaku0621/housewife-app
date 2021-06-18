@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'blogs/index'
   devise_for :users
   root to: "tops#index"
   resources :tops, only: [:index, :show]
