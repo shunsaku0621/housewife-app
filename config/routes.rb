@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :cooks do 
     resource :favorites, only: [:create, :destroy]
   end
+  resources :blogs
 end
