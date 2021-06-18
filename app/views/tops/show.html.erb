@@ -1,8 +1,8 @@
 
 
 
-<% if @favorites.present? %>
   <%= render "shared/header" %>
+<% if @favorites.present? %>
   <div class="header">
     <div class="inner-header">
       <h1 class="title">
@@ -33,6 +33,13 @@
       <%#= paginate @favorites %>
 
     </div>
-
+<% else %>
+  <div class="header">
+    <div class="inner-header">
+      <h1 class="title">
+        お気に入り料理(0)
+      </h1>
+    </div>
+  </div>
 <% end %>
 
