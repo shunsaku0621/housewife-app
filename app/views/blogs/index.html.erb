@@ -1,0 +1,53 @@
+<%= render "shared/header" %>
+
+<div class="header">
+  <div class="inner-header">
+    <h1 class="title">
+        カレンダー
+    </h1>
+    <li class='new-post'>
+      <%= link_to "予定登録", new_blog_path, class:"post-btn"%>
+    </li>
+  </div>
+</div>
+
+<div class="row">
+  <div class="schedule">
+    <div class="schedule-title">今後の予定一覧</div>
+    <table class="schedule-table">
+      <thead class="schedule-thead">
+        <tr>
+          <th>タイトル</th>
+          <th>日程</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @blogs.each do |blog| %>
+          <tr>
+            <td><%= link_to blog.title, blog_path(blog.id)%></td>
+            <td><%= blog.start_time.strftime("%m-%d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+      <%= paginate @blogs %>
+  </div>
+
+
+
+
+  <br>
+    <div class="col-md-8">
+      <%= month_calendar events: @blogs do |date, blogs| %>
+        <%= date.day %>
+
+        <% blogs.each do |blog| %>
+          <div>
+            <%= link_to blog.title, blog_path(blog.id) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
