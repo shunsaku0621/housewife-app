@@ -69,3 +69,6 @@ gem 'image_processing', '~> 1.2'
 
 gem 'kaminari'
 
+
+gem 'simple_calendar', '~> 2.0'
+
