@@ -1,6 +1,15 @@
-<div class="toppage">
-<h1 class="top">カレンダー</h1>
-<br>
+<%= render "shared/header" %>
+
+<div class="header">
+  <div class="inner-header">
+    <h1 class="title">
+        カレンダー
+    </h1>
+    <li class='new-post'>
+      <%= link_to "予定登録", new_blog_path, class:"post-btn"%>
+    </li>
+  </div>
+</div>
 
 <div class="row">
 <div class="col-md-4">
@@ -16,7 +25,7 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= link_to blog.title , blog %></td>
+        <td><%= link_to blog.title, blog_path(blog.id)%></td>
         <td><%= blog.start_time.strftime("%m-%d") %></td>
       </tr>
     <% end %>
@@ -28,7 +37,7 @@
 
 </div>
 
-<br>
+
 
 
 <br>
@@ -38,7 +47,7 @@
 
   <% blogs.each do |blog| %>
     <div>
-      <%= link_to blog.title, blog %>
+      <%= link_to blog.title, blog_path(blog.id) %>
     </div>
   <% end %>
 <% end %>
