@@ -70,9 +70,32 @@
   padding:10px 5px;
   border-top:1px dotted #B7B0B0;
   border-bottom:1px dotted #B7B0B0;
-
 }
 
+.comment{
+  margin-top:15px;
+}
+
+.show-comments{
+  padding:10px 0;
+  overflow:auto;
+  height:125px;
+  background-color:#F8F8F8;
+}
+
+.show-comments-title{
+  text-align:center;
+  border-bottom:1px dotted #B7B0B0;
+}
+
+.show-container{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.show-form-text{
+  width:60%
+}
 
 
 .show-sub{
