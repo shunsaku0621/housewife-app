@@ -32,6 +32,34 @@
           <%end%>
         </div>
       </div>
+
+      <%# コメント投稿 %>
+      <div class="comment">
+        <h4 class="show-comments-title">＜コメント一覧＞</h4>
+        <div class="show-comments">
+          <% @comments.each do |comment| %>
+            <div class="show-comment-content">
+              <p>
+                <strong><%=comment.user.nickname%>：</strong>
+                <%= comment.text %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="show-container">
+          <% if user_signed_in? %>
+            <%= form_with(model: [@post, @comment], local: true) do |form| %>
+              <%= form.text_field :text, placeholder: "コメントする", rows: "2" %>
+              <%= form.submit "SEND" %>
+            <% end %>
+          <% else %>
+            <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+          <% end %>
+        </div>
+      </div>
+
+
     </div>
     <div class="show-sub">
       <div class="show-new-post">
