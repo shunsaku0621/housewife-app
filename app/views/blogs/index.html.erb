@@ -21,17 +21,17 @@
           <th>日程</th>
         </tr>
       </thead>
-
-      <tbody>
-        <% @blogs.each do |blog| %>
-          <tr>
-            <td><%= link_to blog.title, blog_path(blog.id)%></td>
-            <td><%= blog.start_time.strftime("%m-%d") %></td>
-          </tr>
-        <% end %>
-      </tbody>
+        <tbody class="schedule-tbody">
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td><%= link_to blog.title, blog_path(blog.id)%></td>
+              <td><%= blog.start_time.strftime("%m-%d") %></td>
+            </tr>
+          <% end %>
+        </tbody>
     </table>
-      <%= paginate @blogs %>
+    
+   
   </div>
 
 
