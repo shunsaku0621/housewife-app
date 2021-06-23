@@ -1,35 +1,40 @@
-<%= form_with model: @post, url: post_path, class:'form-wrap', local: true do |f| %>
+
+  <div class='form-header'>
+    <h1 class="form-header-text">New Post</h1>
+  </div>
+
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
 
 
-  <div class='message-form'>
+  <div class='new-message-form'>
 
 
-    <div class="message-field">
+    <div class="form-group">
       <%= f.label :title,  "タイトル" %>
       <%= f.text_field :title, class:"input-message" %>
     </div>
 
-    <div class="message-field">
-    <%= f.label :title,  "ジャンル" %>
-     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="form-group">
+      <%= f.label :title,  "ジャンル" %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
     </div>
 
-    <div class="message-field">
+    <div class="form-group">
       <%= f.label :text,  "テキスト" %>
-      <%= f.text_area :text, class:"input-message" %>
+      <%= f.text_area :text, class:"new-input-message" %>
     </div>
 
-    <div class="message-field">
+    <div class="form-group">
       <p>
         クリックしてファイルをアップロード※任意
       </p>
-      <%= f.file_field :image, id:"item-image" %>
+      <%= f.file_field :image, id:"new-item-image" %>
     </div>
 
 
-    <div class="tag-field", id='tag-field'>
+    <div class="form-group", id='tag-field'>
       <%= f.label :name, "タグ" %>
-      <%= f.text_field :name, class:"input-tag" %>
+      <%= f.text_field :name, class:"new-input-tag" %>
     </div>
 
 
@@ -40,7 +45,14 @@
   </div>
 
 
-  <div class="submit-post">
-    <%= f.submit "Send", class: "submit-btn" %>
+  <div class="cook-send">
+    <%= f.submit "Send", class:"register-red-btn" %>
   </div>
 <% end %>
+
+
+
+
+
+
+
