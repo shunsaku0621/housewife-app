@@ -2,7 +2,7 @@
 
 .schedule{
   background-color:#FEFDFC;
-  padding:20px 0;
+  padding-bottom:10px;
 }
 
 .schedule-title{
@@ -24,7 +24,7 @@
 }
 
 .schedule-table td{
-  padding:0 20px 10px ;
+  padding:5px 20px 20px ;
 }
 
 
@@ -35,5 +35,5 @@
 .schedule-tbody{
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 120px;
+  height: 100px;
 }
