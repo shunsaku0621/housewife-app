@@ -1,22 +1,28 @@
+<div class='form-header'>
+  <h1 class="form-header-text">予定登録</h1>
+</div>
+
 <%= form_with(model: @blog, local: true) do |form| %>
 
-  <div class="title">
+  <div class="form-group-time">
+    <span class="time">時間</span><%= form.datetime_select :start_time %>
+  </div>
+
+
+  <div class="form-group">
     <div class="form-tag">タイトル</div>
     <%= form.text_field :title %>
   </div>
 
 
-  <div class="content">
+  <div class="form-group">
     <div class="form-tag">内容</div>
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
 
-    <div class="time">
-    <div class="form-tag">時間</div>
-    <%= form.datetime_select :start_time %>
-  </div>
+  
 
- <div class="submit">
-    <%= form.submit %>
+ <div class="cook-send">
+    <%= form.submit "Send", class:"register-red-btn" %>
  </div>
 <% end %>
