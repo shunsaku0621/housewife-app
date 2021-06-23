@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.all.page(params[:page]).per(3)
+    @blogs = Blog.all
     @blog = Blog.new
   end
 
