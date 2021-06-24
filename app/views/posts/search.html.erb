@@ -1,0 +1,37 @@
+
+
+<%= render "shared/header" %>
+<div class="header">
+  <div class="inner-header">
+    <h1 class="title">
+     検索結果
+    </h1>
+    <li class='new-post'>
+      <%= link_to "New Post", new_post_path, class:"post-btn"%>
+    </li>
+  </div>
+</div>
+
+
+<div class="message-wrap">
+  <%# 検索結果の個数で条件分岐 %>
+  <% if @results.length !=0 %>
+    <% @results.each do |result| %>
+    <div class="post">
+      <%= link_to post_path(result.id) do %>
+        <div class="post-date">
+          投稿日時：<%= result.created_at %>
+        </div>
+        <div class="post-content">
+          <%= result.title %>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  <% else %>
+    該当する商品はありません
+  <% end %>
+  <br>
+  <%= link_to '一覧ページへ戻る',  posts_path %>
+</div>
+

@@ -1,13 +1,17 @@
 class PostsController < ApplicationController
+  
+  before_action :search_post, only: [:index, :search]
+  
+  
+  
   def index
-    @p = Post.ransack(params[:q])
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(5)
     set_post_column
   end
 
   def search
-    @p = Post.ransack(params[:q])
-    @results = @p.result.includes(:post)
+    @results = @p.result.all
+    binding.pry
   end
 
   def new
@@ -64,8 +68,13 @@ class PostsController < ApplicationController
   end
 
 
+  def search_post
+    @p = Post.ransack(params[:q])
+  end
+
+
   def set_post_column
-    @post_title = Post.select("title").distinct  # 重複なくnameカラムのデータを取り出す
+    @post_title = Post.select("title").distinct 
   end
 
 

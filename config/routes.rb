@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   root to: "tops#index"
   resources :tops, only: [:index, :show]
   resources :posts do 
+    collection do
+      get 'search'
+    end
     resources :comments, only: [:create]
   end
-  get 'posts/search'
   resources :cooks do 
     resource :favorites, only: [:create, :destroy]
   end
