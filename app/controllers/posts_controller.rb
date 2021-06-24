@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   def index
+    @p = Post.ransack(params[:q])
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(5)
+  end
+
+  def search
+    @p = Post.ransack(params[:q])
+    @results = @p.result.includes(:post)
   end
 
   def new
