@@ -1,6 +1,16 @@
 class PostsController < ApplicationController
+  
+  before_action :search_post, only: [:index, :search]
+  
+  
+  
   def index
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(5)
+    set_post_column
+  end
+
+  def search
+    @results = @p.result.all
   end
 
   def new
@@ -54,6 +64,16 @@ class PostsController < ApplicationController
 
   def tweet_params
     params.require(:posts_tag).permit(:title, :text, :genre_id, :image, :name).merge(user_id: current_user.id)
+  end
+
+
+  def search_post
+    @p = Post.ransack(params[:q])
+  end
+
+
+  def set_post_column
+    @post_title = Post.select("genre_id").distinct 
   end
 
 

@@ -72,3 +72,6 @@ gem 'kaminari'
 
 gem 'simple_calendar', '~> 2.0'
 
+
+gem 'ransack'
+
