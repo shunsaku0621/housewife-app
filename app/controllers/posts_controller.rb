@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 
   def search
     @results = @p.result.all
-    binding.pry
   end
 
   def new
@@ -74,7 +73,7 @@ class PostsController < ApplicationController
 
 
   def set_post_column
-    @post_title = Post.select("title").distinct 
+    @post_title = Post.select("genre_id").distinct 
   end
 
 
