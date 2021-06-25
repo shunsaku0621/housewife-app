@@ -15,12 +15,16 @@
 <div class="message-wrap">
 
   <%= search_form_for @p, url: search_posts_path do |f| %>
-    <%= f.label :genre_id_eq, 'ジャンル名' %>
-    <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {} %>
-    <br>
-    <%= f.submit '検索' %>
+    <ul class="search-post">
+      <li class="search-li-name">
+        <span><%= f.label :genre_id_eq, 'ジャンル名' %></span>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {} %>
+      </li>
+      <li class="search-li-submit">
+        <%= f.submit '検索' %>
+      </li>
+    </ul>
   <% end %>
-
 
   
 

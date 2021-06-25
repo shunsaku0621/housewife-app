@@ -66,3 +66,25 @@
 .post-date{
   color: gray;
 }
+
+
+
+.search-post{
+  display: flex;
+  justify-content: center;
+}
+
+.search-li-name{
+  margin-right:10px;
+}
+
+
+.search-li-submit{}
+
+.back-search-btn{
+  text-align: center;
+}
+
+.search-no-response{
+  text-align: center;
+}

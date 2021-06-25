@@ -29,9 +29,11 @@
     </div>
     <% end %>
   <% else %>
-    該当する商品はありません
+    <p class="search-no-response">該当する投稿はありません</p>
   <% end %>
   <br>
-  <%= link_to '一覧ページへ戻る',  posts_path %>
+  <div class="back-search-btn">
+    <%= link_to '一覧ページへ戻る', posts_path%>
+  </div>
 </div>
 
