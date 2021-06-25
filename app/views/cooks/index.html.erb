@@ -26,7 +26,7 @@
           <span class="cook-name"><%= link_to cook.name, "#" %></span><br>
           <span class="cook-time">所要時間：<%= cook.time %>分</span>
           <span class="appearance">人気度：<%= cook.appearance %></span><br>
-          <span class="reference"><%= link_to "作り方", cook_path(cook.id), target: :_blank %></span><br>
+          <span class="reference"><%= link_to "作り方", cook_path(cook.id) %></span><br>
           <span class="cook-created-at">投稿日時: <%= cook.created_at%><span>
         </li>
       <ul>
