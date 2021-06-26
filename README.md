@@ -31,9 +31,12 @@ Things you may want to cover:
 家事の手助け、家事の悩み解消を目的とした多機能搭載アプリ
 
 # 本番環境
-URL : https://housewife-app.herokuapp.com/
+URL : https://housewife-app.herokuapp.com/  
 ID：hamasato  
 PASS：0621  
+ログイン情報(テスト用)  
+Email : y@y.com  
+Password : yyyyyyy7  
 
 
 
