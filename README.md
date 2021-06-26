@@ -1,29 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
 # アプリ名
 ## 主婦の味方
 
@@ -49,6 +25,30 @@ Password : yyyyyyy7
 
 ### 実装目的
 女性の社会進出が進む中、仕事と家事の両立をしている女性や専業主婦の方は日頃より時間に追われているように感じました。そこで家事を少しでも楽にするように煩雑な作業をプログラムで効率化を図り自分時間(趣味の時間)を確保してもらうためです。
+
+
+# DEMO
+
+
+# 工夫したポイント
+
+
+# 使用技術(開発環境)
+### フロントエンド
+HTML,CSS,JavaScript,JQuery,Ajax
+### バックエンド
+Ruby,Ruby on Rails
+### データベース
+MySQL,SequelPro
+### ソース管理
+GitHub,GitHubDesktop
+### テスト
+RSpec
+### エディタ
+VSCode
+
+
+# 課題や今後実装したい機能
 
 
 
