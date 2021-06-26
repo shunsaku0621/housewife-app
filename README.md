@@ -25,7 +25,15 @@ Things you may want to cover:
 
 
 # アプリ名
-主婦の味方
+## 主婦の味方
+
+# 概要
+家事の手助け、家事の悩み解消を目的とした多機能搭載アプリ
+
+# 本番環境
+[URL]：(https://housewife-app.herokuapp.com/)
+ID：hamasato
+PASS：0621
 
 
 
