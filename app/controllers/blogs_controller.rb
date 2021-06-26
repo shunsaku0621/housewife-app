@@ -1,6 +1,8 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+  before_action :set_blog, only: [:edit, :update, :destroy, :show]
+  before_action :not_user_do, only: [:edit, :update, :destroy, :show]
+
   def index
     @blogs = Blog.all
     @blog = Blog.new
@@ -11,7 +13,6 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
   end
 
   def create
@@ -29,18 +30,15 @@ class BlogsController < ApplicationController
   
 
   def destroy
-    @blog = Blog.find(params[:id])
     @blog.destroy
     flash[:notice] = '予定を削除しました'
     redirect_to blogs_path
   end
 
   def edit
-    @blog = Blog.find(params[:id])
   end
 
   def update
-    @blog = Blog.find(params[:id])
     if @blog.update(blog_parameter)
       flash[:notice] = '予定を変更しました'
       redirect_to blogs_path
@@ -51,7 +49,20 @@ class BlogsController < ApplicationController
 
   private
 
+
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+
   def blog_parameter
     params.require(:blog).permit(:title, :content, :start_time).merge(user_id: current_user.id)
+  end
+
+
+
+  def not_user_do
+    unless current_user.id == @blog.user_id
+      redirect_to blogs_path
+    end
   end
 end
