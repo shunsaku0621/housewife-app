@@ -34,6 +34,7 @@ Things you may want to cover:
 URL : https://housewife-app.herokuapp.com/  
 ID：hamasato  
 PASS：0621  
+  
 ログイン情報(テスト用)  
 Email : y@y.com  
 Password : yyyyyyy7  
