@@ -32,8 +32,8 @@ Things you may want to cover:
 
 # 本番環境
 [URL]：(https://housewife-app.herokuapp.com/)
-ID：hamasato
-PASS：0621
+ID：hamasato  
+PASS：0621  
 
 
 
