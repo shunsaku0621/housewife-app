@@ -41,3 +41,9 @@
 .like-btn-like {
   color: grey;
 }
+
+.show-fav{
+  padding:15px 20px;
+  margin-top:10px;
+  font-size:7px;
+}

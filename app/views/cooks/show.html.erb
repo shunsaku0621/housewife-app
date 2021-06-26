@@ -14,7 +14,9 @@
   <div class="show-cook-inner">
     <div class="show-inner-title">
       <h1><%= @cook.name %></h1>
-      <%= render 'users/favorite_form' %> 
+      <% if user_signed_in? %>
+        <%= render 'users/favorite_form' %> 
+      <% end %>
     </div>
     <div class="show-image">
       <%= image_tag @cook.image.variant(resize: '250x250'), class: 'mesage-image' if @cook.image.attached? %>
@@ -51,14 +53,22 @@
     </div>
   
   
-
-    <div class="show-edit-delete">
-      <ul>
-        <li class="show-post-sub-edit"><%= link_to "編集", edit_cook_path(@cook.id), class:"show-post-edit"%></li>
-        <li class="show-post-sub-delete"><%= link_to "削除", cook_path(@cook.id), method: :delete, class:"show-post-delete"%></li>
-        <li class="show-post-sub-fav"><%= link_to "お気に入り", top_path(@cook.id), class:"show-post-fav"%></li>
-      </ul>
-    </div>
+    <% if user_signed_in? && current_user.id == @cook.user_id %>
+      <div class="show-edit-delete">
+        <ul>
+          <li class="show-post-sub-edit"><%= link_to "編集", edit_cook_path(@cook.id), class:"show-post-edit"%></li>
+          <li class="show-post-sub-delete"><%= link_to "削除", cook_path(@cook.id), method: :delete, class:"show-post-delete"%></li>
+          <li class="show-post-sub-fav"><%= link_to "お気に入り", top_path(@cook.id), class:"show-post-fav"%></li>
+        </ul>
+      </div>
+    <% elsif user_signed_in? %>
+      <div class="show-fav">
+        <ul>
+          <li style="text-align:center;"><p>お気に入り登録一覧！！</p></li>
+          <li class="show-post-sub-fav"><%= link_to "お気に入り", top_path(@cook.id), class:"show-post-fav"%></li>
+        </ul>
+      </div>
+    <% end %>
   </div>
 
 </div>
