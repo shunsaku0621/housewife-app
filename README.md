@@ -24,6 +24,10 @@ Things you may want to cover:
 * ...
 
 
+# アプリ名
+主婦の味方
+
+
 
 
 # テーブル設計
