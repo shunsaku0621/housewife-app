@@ -14,39 +14,42 @@
 <div class="row">
   <div class="schedule">
     <div class="schedule-title">予定一覧</div>
-    <table class="schedule-table">
-      <thead class="schedule-thead">
-        <tr>
-          <th>タイトル</th>
-          <th>日程</th>
-        </tr>
-      </thead>
+      <table class="schedule-table">
+        <thead class="schedule-thead">
+          <tr>
+            <th>タイトル</th>
+            <th>日程</th>
+          </tr>
+        </thead>
         <tbody class="schedule-tbody">
-          <% @blogs.each do |blog| %>
+        <% @blogs.each do |blog| %>
+          <% if user_signed_in? && current_user.id == blog.user_id %>
             <tr>
               <td><%= link_to blog.title, blog_path(blog.id)%></td>
               <td><%= blog.start_time.strftime("%m-%d") %></td>
             </tr>
           <% end %>
+        <% end %>
         </tbody>
-    </table>
-    
-   
-  </div>
+      </table>
+    </div>
 
 
 
 
-  <br>
+    <br>
     <div class="col-md-8">
       <%= month_calendar events: @blogs do |date, blogs| %>
         <%= date.day %>
-
+        
         <% blogs.each do |blog| %>
-          <div>
-            <%= link_to blog.title, blog_path(blog.id) %>
-          </div>
+          <% if user_signed_in? && current_user.id == blog.user_id %>
+            <div>
+              <%= link_to blog.title, blog_path(blog.id) %>
+            </div>
+          <% end %>
         <% end %>
+
       <% end %>
     </div>
   </div>
