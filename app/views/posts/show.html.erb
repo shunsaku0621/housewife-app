@@ -54,7 +54,7 @@
               <%= form.submit "SEND" %>
             <% end %>
           <% else %>
-            <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+            <strong><p style="font-size:12px;">※※※ コメントの投稿には<%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>/<%= link_to 'ログイン', new_user_session_path, class: "login" %>が必要です ※※※</p></strong>
           <% end %>
         </div>
       </div>
@@ -70,14 +70,14 @@
       </div>
 
 
-
-      <div class="show-edit-delete">
-        <ul>
-          <li class="show-post-sub-edit"><%= link_to "編集", edit_post_path(@post.id), class:"show-post-edit"%></li>
-          <li class="show-post-sub-delete"><%= link_to "削除", post_path(@post.id), method: :delete, class:"show-post-delete"%></li>
-        </ul>
-      </div>
-
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="show-edit-delete">
+          <ul>
+            <li class="show-post-sub-edit"><%= link_to "編集", edit_post_path(@post.id), class:"show-post-edit"%></li>
+            <li class="show-post-sub-delete"><%= link_to "削除", post_path(@post.id), method: :delete, class:"show-post-delete"%></li>
+          </ul>
+        </div>
+      <% end %>
 
 
 

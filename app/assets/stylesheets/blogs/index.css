@@ -37,3 +37,14 @@
   overflow-y: scroll;
   height: 100px;
 }
+
+
+.none-schedule{
+  padding-top:20px;
+}
+
+
+.schedule-none-title{
+  font-size: 20px;
+  text-align: center;
+}
