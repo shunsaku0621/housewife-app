@@ -27,7 +27,38 @@ Password : yyyyyyy7
 
 
 # DEMO
+### トップページ
 ![主婦](https://user-images.githubusercontent.com/79575206/123580245-5e6bca00-d814-11eb-8731-c765d7c3e3ef.jpeg)
+
+### 掲示板一覧表示
+![掲示板トップページ](https://user-images.githubusercontent.com/79575206/123580860-9c1d2280-d815-11eb-969c-3bb0d1d8167e.jpeg)
+
+### 掲示板投稿ページ
+![掲示板投稿](https://user-images.githubusercontent.com/79575206/123581164-4e54ea00-d816-11eb-9104-5b04023089fd.jpeg)
+
+### 料理一覧表示
+![料理一覧表示](https://user-images.githubusercontent.com/79575206/123581394-ca4f3200-d816-11eb-9f9e-7ab243f554cb.jpeg)
+
+### 料理投稿ページ
+![料理投稿](https://user-images.githubusercontent.com/79575206/123581634-46e21080-d817-11eb-85e9-49d8d802d4d8.jpeg)
+
+### 料理詳細ページ
+![料理詳細](https://user-images.githubusercontent.com/79575206/123581742-7bee6300-d817-11eb-94e6-afb0887a9dc3.jpeg)
+
+### カレンダー表示
+![カレンダー](https://user-images.githubusercontent.com/79575206/123581886-c7087600-d817-11eb-9c78-5d88d4ad8a6c.jpeg)
+
+
+### カレンダー登録ページ
+![カレンダー登録](https://user-images.githubusercontent.com/79575206/123582049-0fc02f00-d818-11eb-8cdd-e97240c95972.jpeg)
+
+
+
+
+
+
+
+
 
 # 工夫したポイント
 
