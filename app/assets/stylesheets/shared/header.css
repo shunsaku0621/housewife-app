@@ -5,13 +5,11 @@
 .top-page-header{
   background-color: #fff;
   width: 100vw;
-  /* height:75px; */
   display: flex;
   justify-content: space-between;
 }
 .header-title{
   display: flex;
-  /* background-color:coral; */
 }
 .header-title h1{
   font-size:20px;
@@ -30,7 +28,6 @@
 
 .lists-left{
   display: flex;
-  /* background-color: aqua;  */
   margin-right: 30px;
   margin-top:5vh;
 }
@@ -41,15 +38,27 @@
 
 .lists-right{
   display: flex;
-  /* background-color:brown; */
+  margin-right:5vw;
   margin-top:5vh;
+}
+
+
+.home-list{
+  text-decoration: none;
 }
 .login{
   margin-right:10px;
+  text-decoration: none;
 }
-
+.logout{
+  text-decoration: none;
+}
+.sign-up{
+  text-decoration: none;
+}
 .user-nickname{
   margin-right:10px;
+  text-decoration: none;
 }
 
 
