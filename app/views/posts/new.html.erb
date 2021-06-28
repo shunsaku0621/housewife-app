@@ -10,30 +10,30 @@
 
 
     <div class="form-group">
-      <%= f.label :title,  "タイトル" %>
+      <%= f.label :title,  "タイトル(※必須)" %>
       <%= f.text_field :title, class:"input-message" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :title,  "ジャンル" %>
+      <%= f.label :title,  "ジャンル(※必須)" %>
       <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
     </div>
 
     <div class="form-group">
-      <%= f.label :text,  "テキスト" %>
+      <%= f.label :text,  "テキスト(※必須)" %>
       <%= f.text_area :text, class:"new-input-message" %>
     </div>
 
     <div class="form-group">
       <p>
-        クリックしてファイルをアップロード※任意
+        クリックしてファイルをアップロード(※任意)
       </p>
       <%= f.file_field :image, id:"new-item-image" %>
     </div>
 
 
     <div class="form-group", id='tag-field'>
-      <%= f.label :name, "タグ" %>
+      <%= f.label :name, "タグ(※任意)" %>
       <%= f.text_field :name, class:"new-input-tag" %>
     </div>
 
