@@ -46,7 +46,7 @@ Password : yyyyyyy7
 
 
 ### 掲示板詳細ページ
-![主婦](https://user-images.githubusercontent.com/79575206/123583373-77777980-d81a-11eb-9fc1-8c63ea5af456.jpeg)
+![掲示板詳細ページ](https://user-images.githubusercontent.com/79575206/123583532-b4dc0700-d81a-11eb-9cc5-77ef08b23561.jpeg)
 #### 概要
 
 
