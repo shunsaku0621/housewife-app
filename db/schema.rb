@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_075823) do
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.text "content", null: false
+    t.text "content"
     t.datetime "start_time", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
