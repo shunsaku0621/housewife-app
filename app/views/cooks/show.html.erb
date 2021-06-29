@@ -21,24 +21,33 @@
     <div class="show-image">
       <%= image_tag @cook.image.variant(resize: '250x250'), class: 'mesage-image' if @cook.image.attached? %>
     </div>
-
-    <h2><%= @cook.description %></h2>
-    <h2 class="cook-reference">作り方：<%= link_to "#{@cook.reference}", @cook.reference, target: "_blank" %></h2>
-    <h2 class="cook-portion">分量：<span class="cook-other-info"><%= @cook.portion %></span> 人分</h2>
-    <div class="cook-point">
-      <h2 class="cook-title-point">コツ・ポイント</h2>
-      <h2><%= @cook.point %></h2>
-    </div>
-      
+    <% if @cook.description.present? %>
+      <h2><%= @cook.description %></h2>
+    <% end %>
+    <% if @cook.reference.present? %>
+      <h2 class="cook-reference">作り方：<%= link_to "#{@cook.reference}", @cook.reference, target: "_blank" %></h2>
+    <% end %>
+    <% if @cook.portion.present? %>
+      <h2 class="cook-portion">分量：<span class="cook-other-info"><%= @cook.portion %></span> 人分</h2>
+    <% end %>
+    <% if @cook.point.present? %>
+      <div class="cook-point">
+        <h2 class="cook-title-point">コツ・ポイント</h2>
+        <h2><%= @cook.point %></h2>
+      </div>
+    <% end %>
 
     <div class="show-cook-other-info">
-      <div class="cook-info">
-        <h2>所要時間：<span class="cook-other-info"><%= @cook.time %></span>分</span>
-      </h2>
-      </div>
-      <div class="cook-info">
-        <h2>人気度：<span class="cook-other-info"><%= @cook.appearance %><span></h2>
-      </div>
+      <% if @cook.time.present? %>
+        <div class="cook-info">
+          <h2>所要時間：<span class="cook-other-info"><%= @cook.time %></span>分</span></h2>
+        </div>
+      <% end %>
+      <% if @cook.appearance.present? %>
+        <div class="cook-info">
+          <h2>人気度：<span class="cook-other-info"><%= @cook.appearance %><span></h2>
+        </div>
+      <% end %>
     </div>
 
 
