@@ -18,9 +18,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = PostsTag.new(tweet_params)
+    @post = PostsTag.new(post_params)
+    tag_list = params[:post][:name].split(',')
     if @post.valid?
-      @post.save
+      @post.save(tag_list)
       flash[:notice] = '投稿が完了しました'
       return redirect_to posts_path
     else
@@ -42,28 +43,29 @@ class PostsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @post = Post.find(params[:id])
-  #   @posts_tag = PostsTag.new(post: @post)
-  # end
+  def edit
+    @post = Post.find(params[:id])
+    @form = PostsTag.new(post: @post)
+  end
 
-  # def update
-  #   @post = Post.find(params[:id])
-  #   @posts_tag = PostsTag.new(tweet_params, post: @post)
-  #   tag_list = params[:posts_tag][:name].split(",")
-  #   if @posts_tag.valid?
-  #     @posts_tag.save(tag_list)
-  #     return redirect_to post_path(@post)
-  #   else
-  #     render :edit
-  #   end
+  def update
+    @post = Post.find(params[:id])
+    @form = PostsTag.new(post_params, post: @post)
+    tag_list = params[:post][:name].split(",")
+    if @form.valid?
+      @form.save(tag_list)
+      flash[:notice] = '投稿を編集しました'
+      return redirect_to post_path(@post)
+    else
+      render :edit
+    end
 
-  # end
+  end
 
   private
 
-  def tweet_params
-    params.require(:posts_tag).permit(:title, :text, :genre_id, :image, :name).merge(user_id: current_user.id)
+  def post_params
+    params.require(:post).permit(:title, :text, :genre_id, :image, :name).merge(user_id: current_user.id)
   end
 
 
