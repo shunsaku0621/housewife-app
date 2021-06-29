@@ -19,8 +19,9 @@ class PostsController < ApplicationController
 
   def create
     @post = PostsTag.new(post_params)
+    tag_list = params[:posts_tag][:name].split(',')
     if @post.valid?
-      @post.save
+      @post.save(tag_list)
       flash[:notice] = '投稿が完了しました'
       return redirect_to posts_path
     else
@@ -42,10 +43,9 @@ class PostsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @post = Post.find(params[:id])
-  #   @posts_tag = PostsTag.new(post: @post)
-  # end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
   # def update
   #   @post = Post.find(params[:id])

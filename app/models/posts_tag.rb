@@ -23,12 +23,16 @@ class PostsTag
   # end
   
 
-  def save
+  def save(tag_list)
     post = Post.create(title: title, text: text, user_id: user_id, genre_id: genre_id, image: image)
-    tag = Tag.where(name: name).first_or_initialize
-    tag.save
 
-    PostTagRelation.create(post_id: post.id, tag_id: tag.id)
+    tag_list.each do |tag_name|
+      tag = Tag.where(name: tag_name).first_or_initialize
+      tag.save
+      PostTagRelation.create(post_id: post.id, tag_id: tag.id)
+    end
+
+
   end
 
 
