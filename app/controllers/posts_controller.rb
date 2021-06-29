@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = PostsTag.new(tweet_params)
+    @post = PostsTag.new(post_params)
     if @post.valid?
       @post.save
       flash[:notice] = '投稿が完了しました'
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   # def update
   #   @post = Post.find(params[:id])
-  #   @posts_tag = PostsTag.new(tweet_params, post: @post)
+  #   @posts_tag = PostsTag.new(post_params, post: @post)
   #   tag_list = params[:posts_tag][:name].split(",")
   #   if @posts_tag.valid?
   #     @posts_tag.save(tag_list)
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
 
   private
 
-  def tweet_params
+  def post_params
     params.require(:posts_tag).permit(:title, :text, :genre_id, :image, :name).merge(user_id: current_user.id)
   end
 
