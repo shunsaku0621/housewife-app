@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def create
     @post = PostsTag.new(post_params)
-    tag_list = params[:posts_tag][:name].split(',')
+    tag_list = params[:post][:name].split(',')
     if @post.valid?
       @post.save(tag_list)
       flash[:notice] = '投稿が完了しました'
@@ -45,25 +45,27 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @form = PostsTag.new(post: @post)
   end
 
-  # def update
-  #   @post = Post.find(params[:id])
-  #   @posts_tag = PostsTag.new(post_params, post: @post)
-  #   tag_list = params[:posts_tag][:name].split(",")
-  #   if @posts_tag.valid?
-  #     @posts_tag.save(tag_list)
-  #     return redirect_to post_path(@post)
-  #   else
-  #     render :edit
-  #   end
+  def update
+    @post = Post.find(params[:id])
+    @form = PostsTag.new(post_params, post: @post)
+    tag_list = params[:post][:name].split(",")
+    if @form.valid?
+      @form.save(tag_list)
+      flash[:notice] = '投稿を編集しました'
+      return redirect_to post_path(@post)
+    else
+      render :edit
+    end
 
-  # end
+  end
 
   private
 
   def post_params
-    params.require(:posts_tag).permit(:title, :text, :genre_id, :image, :name).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :genre_id, :image, :name).merge(user_id: current_user.id)
   end
 
 
