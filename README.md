@@ -164,6 +164,8 @@ VSCode
 - has_many :posts
 - has_many :comments
 - has_many :cooks
+- has_many :blogs
+
 
 
 ## posts テーブル
@@ -262,6 +264,23 @@ VSCode
 ### Association
 
 - belongs_to :cook
+
+
+
+
+## blogs テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |  
+| content       | string     |                                |  
+| start_time    | datetime   | null: false                    |
+| user          | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
 
 
 
