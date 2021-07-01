@@ -21,10 +21,10 @@
             </span>
           </li>
           <li>
-            <span class="cook-name"><%= link_to fav.name, "#" %></span><br>
+            <span class="cook-name"><%= link_to fav.name, cook_path(fav.id) %></span><br>
             <span class="cook-time">所要時間：<%= fav.time %>分</span>
             <span class="appearance">人気度：<%= fav.appearance %></span><br>
-            <span class="reference"><%= link_to "作り方", cook_path(fav.id), target: :_blank %></span><br>
+            <span class="reference"><%= link_to "作り方", cook_path(fav.id) %></span><br>
             <span class="cook-created-at">投稿日時: <%= fav.created_at%><span>
           </li>
         <ul>
