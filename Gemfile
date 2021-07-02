@@ -75,3 +75,5 @@ gem 'simple_calendar', '~> 2.0'
 
 gem 'ransack'
 
+
+gem 'devise-i18n'
