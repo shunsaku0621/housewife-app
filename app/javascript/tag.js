@@ -1,12 +1,15 @@
 if (location.pathname.match("posts/new")){
   document.addEventListener("DOMContentLoaded", () => {
     const inputElement = document.getElementById("post_name");
+    
+    
     inputElement.addEventListener("keyup", ()=>{
       const keyword = document.getElementById("post_name").value;
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `search/?keyword=${keyword}`, true);
       XHR.responseType = "json";
       XHR.send();
+    
       XHR.onload = ()=>{
         const searchResult = document.getElementById("search-result");
         searchResult.innerHTML = "";
@@ -18,19 +21,19 @@ if (location.pathname.match("posts/new")){
             childElement.setAttribute("id", tag.id);
             childElement.innerHTML = tag.name;
             searchResult.appendChild(childElement);
-            const clickElement = document.getElementById(tag.id);
 
+            const clickElement = document.getElementById(tag.id);
             clickElement.addEventListener("click", () => {
               document.getElementById("post_name").value = clickElement.textContent;
               clickElement.remove();
             });
-
           });
         };
       };
 
-
-
     });
+
+
   });
+  
 };
