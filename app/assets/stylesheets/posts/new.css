@@ -40,11 +40,13 @@
   padding-left: 10px;
 }
 
-/* .child{
+.child{
   border-bottom:#666 1px solid;
   margin: 10px 0;
   padding-left: 11px;
-} */
+  width:60%;
+  margin:0 auto;
+} 
 
 .new-submit-post{
   display: flex;
