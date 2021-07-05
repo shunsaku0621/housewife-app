@@ -1,5 +1,8 @@
 function post (){
-  console.log("イベント発火");
+  const submit = document.getElementById("post-comment-submit");
+  submit.addEventListener("click", ()=>{
+    console.log("発火");
+  });
 };
 
 window.addEventListener('load', post);
