@@ -49,9 +49,9 @@
 
         <div class="show-container">
           <% if user_signed_in? %>
-            <%= form_with(model: [@post, @comment], local: true) do |form| %>
+            <%= form_with(model: [@post, @comment], local: true, id: "comment-form") do |form| %>
               <%= form.text_field :text, placeholder: "コメントする", rows: "2" %>
-              <%= form.submit "SEND" %>
+              <%= form.submit "SEND", id: "post-comment-submit" %>
             <% end %>
           <% else %>
             <strong><p style="font-size:12px;">※※※ コメントの投稿には<%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>/<%= link_to 'ログイン', new_user_session_path, class: "login" %>が必要です ※※※</p></strong>

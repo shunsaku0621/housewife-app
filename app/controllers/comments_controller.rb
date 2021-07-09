@@ -1,8 +1,14 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    flash[:notice] = 'コメントしました!'
-    redirect_to post_path(comment.post.id)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      flash[:notice] = 'コメントしました!'
+      redirect_to post_path(@comment.post.id)
+    else
+      @post = @comment.post
+      @comments = @post.comments
+      render "posts/show"
+    end
   end
 
 
