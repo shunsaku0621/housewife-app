@@ -44,4 +44,9 @@ class User < ApplicationRecord
         end
 
 
+        def already_liked?(cook)
+          self.likes.exists?(cook_id: cook.id)
+        end
+
+
 end
