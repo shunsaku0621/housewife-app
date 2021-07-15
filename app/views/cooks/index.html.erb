@@ -28,6 +28,12 @@
           <span class="appearance">人気度：<%= cook.appearance %></span><br>
           <span class="reference"><%= link_to "作り方", cook_path(cook.id) %></span><br>
           <span class="cook-created-at">投稿日時: <%=cook.created_at%><span>
+          <% if current_user.already_liked?(cook)%>
+            <%= link_to 'いいねを外す', cook_likes_path(cook), method: :delete %>
+          <% else %>
+            <%= link_to 'いいね', cook_likes_path(cook), method: :post %>
+          <% end %>
+          <%= cook.likes.count %>
         </li>
       <ul>
       </div>
