@@ -2,6 +2,8 @@ class Cook < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_one_attached :image
+  has_many :likes, dependent: :destroy
+
   
   with_options presence: true do
     validates :name, length: {maximum: 30}

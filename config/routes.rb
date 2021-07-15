@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :cooks do 
     resource :favorites, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
   end
   resources :blogs
 end

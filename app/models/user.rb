@@ -25,7 +25,7 @@ class User < ApplicationRecord
         has_many :favorites, dependent: :destroy
         has_many :comments
         has_many :blogs
-
+        has_many :likes, dependent: :destroy
 
 
 
@@ -41,6 +41,11 @@ class User < ApplicationRecord
         # 現在のユーザーがお気に入り登録してたらtrueを返す
         def favorite?(cook)
           !Favorite.find_by(user_id: id, cook_id: cook.id).nil?
+        end
+
+
+        def already_liked?(cook)
+          self.likes.exists?(cook_id: cook.id)
         end
 
 
