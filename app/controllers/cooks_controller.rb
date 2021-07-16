@@ -1,6 +1,6 @@
 class CooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+  before_action :set_cook, only: [:edit, :update, :destroy, :show]
   def index
     @cooks = Cook.includes(:user).order(created_at: :desc).page(params[:page]).per(5)
   end
@@ -23,18 +23,14 @@ class CooksController < ApplicationController
 
 
   def show
-    @cook = Cook.find(params[:id])
   end
 
 
   def edit
-    @cook  = Cook.find(params[:id])
   end
 
   def update
-    @cook = Cook.new(cook_params)
-    if @cook.valid?
-      @cook.save
+    if @cook.update(cook_params)
       flash[:notice] = '投稿を編集しました'
       redirect_to cook_path(@cook)
     else 
@@ -43,7 +39,6 @@ class CooksController < ApplicationController
   end
 
   def destroy
-    @cook = Cook.find(params[:id])
     if @cook.destroy
       flash[:notice] = '投稿を削除しました'
       redirect_to cooks_path
@@ -60,5 +55,9 @@ class CooksController < ApplicationController
     params.require(:cook).permit(:name, :description, :portion, :point, :reference, :time, :appearance, :memo, :image).merge(user_id: current_user.id)
   end
 
+
+  def set_cook
+    @cook = Cook.find(params[:id])
+  end
   
 end
