@@ -47,3 +47,12 @@
   margin-top:10px;
   font-size:7px;
 }
+
+/* いいね機能 */
+.show-inner-like{
+  display: flex;
+}
+
+.show-inner-like li{
+  margin-right:15px;
+}

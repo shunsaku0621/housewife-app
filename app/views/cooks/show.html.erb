@@ -13,7 +13,22 @@
 
   <div class="show-cook-inner">
     <div class="show-inner-title">
-      <h1><%= @cook.name %></h1>
+      <ul class="show-inner-like">
+        <li><h1><%= @cook.name %></h1></li>
+        <li>
+          <% if current_user.already_liked?(@cook)%>
+            <%= link_to cook_likes_path(@cook), method: :delete do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to cook_likes_path(@cook), method: :post do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+          <%= @cook.likes.count %>
+        </li>
+      </ul>
+      
       <% if user_signed_in? %>
         <%= render 'users/favorite_form' %> 
       <% end %>
@@ -29,6 +44,7 @@
     <% end %>
     <% if @cook.portion.present? %>
       <h2 class="cook-portion">分量：<span class="cook-other-info"><%= @cook.portion %></span> 人分</h2>
+
     <% end %>
     <% if @cook.point.present? %>
       <div class="cook-point">
@@ -48,6 +64,12 @@
           <h2>人気度：<span class="cook-other-info"><%= @cook.appearance %><span></h2>
         </div>
       <% end %>
+
+      <div class="show-new-post">
+        <div class="show-post-sub">
+          <%= link_to "一覧ページへ", cooks_path, class:"show-post"%>
+        </div>
+      </div>
     </div>
 
 
