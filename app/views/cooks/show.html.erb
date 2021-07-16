@@ -25,8 +25,9 @@
               <i class="far fa-heart"></i>
             <% end %>
           <% end %>
-          <%= @cook.likes.count %>
         </li>
+        
+          <li><p><%= @cook.likes.count %></p></li>
       </ul>
       
       <% if user_signed_in? %>
