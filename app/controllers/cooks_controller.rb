@@ -1,6 +1,6 @@
 class CooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+  # before_action :set_cook, only: [:edit, :update, :destroy, :show]
   def index
     @cooks = Cook.includes(:user).order(created_at: :desc).page(params[:page]).per(5)
   end
@@ -32,9 +32,8 @@ class CooksController < ApplicationController
   end
 
   def update
-    @cook = Cook.new(cook_params)
-    if @cook.valid?
-      @cook.save
+    @cook = Cook.find(params[:id])
+    if @cook.update(cook_params)
       flash[:notice] = '投稿を編集しました'
       redirect_to cook_path(@cook)
     else 
