@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_094702) do
+ActiveRecord::Schema.define(version: 2021_07_26_094041) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(version: 2021_07_12_094702) do
     t.index ["user_id", "cook_id"], name: "index_favorites_on_user_id_and_cook_id", unique: true
   end
 
+  create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "amount", null: false
+    t.integer "category_id", null: false
+    t.text "memo"
+    t.datetime "start_time", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_incomes_on_user_id"
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "cook_id", null: false
@@ -131,6 +142,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_094702) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "cooks", "users"
+  add_foreign_key "incomes", "users"
   add_foreign_key "post_tag_relations", "posts"
   add_foreign_key "post_tag_relations", "tags"
 end
