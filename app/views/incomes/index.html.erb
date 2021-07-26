@@ -1,0 +1,43 @@
+
+
+
+<h1>記事一覧</h1>
+<%= link_to "投稿する", new_income_path, class:"post" %>
+
+
+
+<%= month_calendar events: @incomes do |date, events| %>
+  <%= date.day %>
+  <% @s = date.month %>
+  <% sum = 0 %>
+  <% events.each do |event| %>
+    <% sum += event.amount %>
+  <% end %>
+  <% if sum>0 %>
+    <div>
+      <%= sum %>円
+    </div>
+  <% end %>
+<% end %>
+
+<% @s.to_i %>
+<% @h = @s-1 %>
+
+
+
+
+<% @incomes.each do |income| %>
+  <% if @h == income.start_time.strftime('%m').slice(1).to_i %>
+    <div class="income">
+      <div class="income-genre">
+        <%= income.category.name %>
+      </div>
+      <div class="income-title">
+        <%= income.amount %>
+      </div>
+      <div class="income-text">
+        <%= income.memo %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
