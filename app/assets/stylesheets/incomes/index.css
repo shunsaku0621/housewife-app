@@ -5,3 +5,9 @@
 .income{
   text-align:center;
 }
+
+.income-main{
+  margin-bottom:10px;
+  display:flex;
+  justify-content: center;
+}

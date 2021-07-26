@@ -35,25 +35,33 @@
 <% @incomes.each do |income| %>
   <% if @h == income.start_time.strftime('%m').slice(1).to_i %>
     <div class="income">
-      <div class="income-item">
-        <p class="income-tim">
+      <div class="income-top">
+        <p class="income-time">
           <%= income.start_time.strftime("%m月%d日") %>
         </p>
       </div>
-      <div class="income-item">
-        <p class="income-category">
-          <%= income.category.name %>
-        </p>
-      </div>
-      <div class="income-item">
-        <p class="income-amount">
-          <%= income.amount %>
-        </p>
-      </div>
-      <div class="income-item">
-        <p class="income-memo">
-          <%= income.memo %>
-        </p>
+      <div class="income-main">
+
+        <div class="income-item">
+          <p class="income-category">
+            <%= income.category.name %>
+          </p>
+        </div>
+
+        <div class="income-item">
+          <% if income.memo.present? %>
+            <p class="income-memo">
+              (<%= income.memo %>)
+            </p>
+          <% end %>
+        </div>
+
+        <div class="income-item">
+          <p class="income-amount">
+            <%= income.amount %>
+          </p>
+        </div>
+
       </div>
     </div>
   <% end %>
