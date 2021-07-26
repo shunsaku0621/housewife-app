@@ -1,7 +1,6 @@
 class IncomesController < ApplicationController
   def index
     @incomes = Income.order("created_at")
-    @income_sum = @incomes[0].income_sum
     my_page_show
   end
 
