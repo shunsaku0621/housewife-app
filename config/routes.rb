@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   resources :blogs
+  resources :incomes
 end
