@@ -1,8 +1,20 @@
 
 
+<%= render "shared/header" %>
 
-<h1>記事一覧</h1>
-<%= link_to "投稿する", new_income_path, class:"post" %>
+<div class="header">
+  <div class="inner-header">
+    <h1 class="title">
+        家計簿
+    </h1>
+    <li class='new-post'>
+      <%= link_to "予定登録", new_income_path, class:"post-btn"%>
+    </li>
+  </div>
+</div>
+
+
+
 
 
 
