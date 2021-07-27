@@ -17,7 +17,9 @@
     <% @s = date.month %>
     <% sum = 0 %>
     <% events.each do |event| %>
-      <% sum += event.amount %>
+      <% if user_signed_in? && current_user.id == event.user_id %>
+        <% sum += event.amount %>
+      <% end %>
     <% end %>
     <% if sum>0 %>
       <div>
@@ -32,40 +34,40 @@
 
 
 <div class="income">
-<% @incomes.each do |income| %>
-  <% if @h == income.start_time.strftime('%m').slice(1).to_i %>
-    
+  <% @incomes.each do |income| %>
+    <% if @h == income.start_time.strftime('%m').slice(1).to_i %>
+      <% if user_signed_in? && current_user.id == income.user_id %>
 
-      <div class="income-top">
-        <p class="income-time">
-          <%= income.start_time.strftime("%m月%d日") %>
-        </p>
-      </div>
-      <div class="income-main">
-
-        <div class="income-item">
-          <p class="income-category">
-            <%= income.category.name %>
+        <div class="income-top">
+          <p class="income-time">
+            <%= income.start_time.strftime("%m月%d日") %>
           </p>
         </div>
+        <div class="income-main">
 
-        <div class="income-item">
-          <% if income.memo.present? %>
-            <p class="income-memo">
-              (<%= income.memo %>)
+          <div class="income-item">
+            <p class="income-category">
+              <%= income.category.name %>
             </p>
-          <% end %>
+          </div>
+
+          <div class="income-item">
+            <% if income.memo.present? %>
+              <p class="income-memo">
+                (<%= income.memo %>)
+              </p>
+            <% end %>
+          </div>
+
+          <div class="income-item">
+            <p class="income-amount">
+              <%= income.amount %>
+            </p>
+          </div>
+
         </div>
 
-        <div class="income-item">
-          <p class="income-amount">
-            <%= income.amount %>
-          </p>
-        </div>
-
-      </div>
-
-    
+      <% end %>
+    <% end %>
   <% end %>
-<% end %>
 </div>
