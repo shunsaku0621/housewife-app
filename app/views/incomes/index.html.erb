@@ -31,10 +31,11 @@
 
 
 
-
+<div class="income">
 <% @incomes.each do |income| %>
   <% if @h == income.start_time.strftime('%m').slice(1).to_i %>
-    <div class="income">
+    
+
       <div class="income-top">
         <p class="income-time">
           <%= income.start_time.strftime("%m月%d日") %>
@@ -63,6 +64,8 @@
         </div>
 
       </div>
-    </div>
+
+    
   <% end %>
 <% end %>
+</div>
