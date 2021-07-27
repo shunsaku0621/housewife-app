@@ -6,8 +6,18 @@
   text-align:center;
 }
 
+.income-time{
+  background-color:#b8b8b8;
+  opacity: 0.5;
+
+}
+
 .income-main{
   margin-bottom:10px;
   display:flex;
   justify-content: center;
+}
+
+.income-memo{
+  opacity: 0.5;
 }
