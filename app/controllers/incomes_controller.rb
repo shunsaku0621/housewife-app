@@ -20,6 +20,7 @@ class IncomesController < ApplicationController
 
   
   def edit
+    @income = Income.find(params[:id])
   end
 
   def update
