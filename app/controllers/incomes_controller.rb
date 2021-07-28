@@ -18,7 +18,11 @@ class IncomesController < ApplicationController
     end
   end
 
-  def show
+  
+  def edit
+  end
+
+  def update
   end
 
 
