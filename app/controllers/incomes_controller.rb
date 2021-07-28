@@ -24,6 +24,13 @@ class IncomesController < ApplicationController
   end
 
   def update
+    @income = Income.find(params[:id])
+    if @income.update(income_params)
+      flash[:notice] = '家計簿を編集しました'
+      redirect_to incomes_path
+    else 
+      render "edit"
+    end
   end
 
 
