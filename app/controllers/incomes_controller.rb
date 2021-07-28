@@ -1,4 +1,7 @@
 class IncomesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  before_action :set_income, only: [:edit, :update]
+
   def index
     @incomes = Income.order("created_at")
     my_page_show
@@ -19,11 +22,9 @@ class IncomesController < ApplicationController
 
   
   def edit
-    @income = Income.find(params[:id])
   end
 
   def update
-    @income = Income.find(params[:id])
     if @income.update(income_params)
       flash[:notice] = '家計簿を編集しました'
       redirect_to incomes_path
@@ -41,4 +42,10 @@ class IncomesController < ApplicationController
   def my_page_show
     @day_params = params[:start_date]
   end
+
+
+  def set_income
+    @income = Income.find(params[:id])
+  end
+
 end
