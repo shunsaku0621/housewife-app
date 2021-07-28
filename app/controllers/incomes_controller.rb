@@ -9,7 +9,6 @@ class IncomesController < ApplicationController
   end
 
   def create
-    binding.pry
     @income = Income.new(income_params)
     if @income.save
       redirect_to incomes_path
