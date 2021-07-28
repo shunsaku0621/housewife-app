@@ -1,6 +1,7 @@
 class IncomesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_income, only: [:edit, :update]
+  before_action :not_user_do_income, only: [:edit, :update]
 
   def index
     @incomes = Income.order("created_at")
@@ -46,6 +47,12 @@ class IncomesController < ApplicationController
 
   def set_income
     @income = Income.find(params[:id])
+  end
+
+  def not_user_do_income
+    unless current_user.id == @income.user_id
+      redirect_to incomes_path
+    end
   end
 
 end
