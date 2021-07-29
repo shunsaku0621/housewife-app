@@ -7,6 +7,7 @@ class IncomesController < ApplicationController
     @incomes = Income.order("created_at")
     my_page_show
     sum_income
+    sum_getmoney
   end
 
   def new
@@ -64,6 +65,17 @@ class IncomesController < ApplicationController
       end
     end
     @sum_income = array.sum
+  end
+
+
+  def sum_getmoney
+    array = []
+    Getmoney.all.each do |getmoney|
+      if current_user.id == getmoney.user_id
+        array << getmoney.amount
+      end
+    end
+    @sum_getmoney = array.sum
   end
 
 end
