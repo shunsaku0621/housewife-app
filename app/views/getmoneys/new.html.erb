@@ -1,8 +1,8 @@
 <div class='form-header'>
-  <h1 class="form-header-text">支出登録</h1>
+  <h1 class="form-header-text">収入登録</h1>
 </div>
 
-<%= form_with(model: @income, local: true) do |form| %>
+<%= form_with(model: @getmoney, local: true) do |form| %>
 
   <div class="form-group-time">
     <span class="time">日付</span><%= form.datetime_select :start_time %>
@@ -22,7 +22,7 @@
 
   <div class="form-group">
     <div class="form-tag">カテゴリー</div>
-    <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
+    <%= form.collection_select(:category_id, Category2.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
 
   
@@ -33,5 +33,5 @@
 <% end %>
 
 <p class=''>
-  <%= link_to "収入登録", new_getmoney_path, class:""%>
+  <%= link_to "支出登録", new_income_path, class:""%>
 </p>
