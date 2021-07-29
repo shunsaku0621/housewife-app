@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
   resources :blogs
   resources :incomes
+  resources :getmoneys
 end
