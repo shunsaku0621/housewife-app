@@ -9,4 +9,5 @@ class Income < ApplicationRecord
   end
   validates :category_id, numericality: { other_than: 1 }
 
+
 end
