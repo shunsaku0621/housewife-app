@@ -1,0 +1,2 @@
+class GetmoneysController < ApplicationController
+end
