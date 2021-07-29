@@ -6,6 +6,7 @@ class IncomesController < ApplicationController
   def index
     @incomes = Income.order("created_at")
     my_page_show
+    sum_income
   end
 
   def new
@@ -53,6 +54,16 @@ class IncomesController < ApplicationController
     unless current_user.id == @income.user_id
       redirect_to incomes_path
     end
+  end
+
+  def sum_income
+    array = []
+    Income.all.each do |income|
+      if current_user.id == income.user_id
+        array << income.amount
+      end
+    end
+    @sum_income = array.sum
   end
 
 end
