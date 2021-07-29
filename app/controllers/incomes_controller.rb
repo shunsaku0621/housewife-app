@@ -59,7 +59,9 @@ class IncomesController < ApplicationController
   def sum_income
     array = []
     Income.all.each do |income|
-      array << income.amount
+      if current_user.id == income.user_id
+        array << income.amount
+      end
     end
     @sum_income = array.sum
   end
