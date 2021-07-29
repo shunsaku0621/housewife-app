@@ -1,0 +1,2 @@
+class Getmoney < ApplicationRecord
+end
