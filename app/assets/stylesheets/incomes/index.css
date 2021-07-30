@@ -23,6 +23,12 @@
 
 .income{
   text-align:center;
+}
+.income >h1{
+  margin-bottom:10px;
+}
+
+.income-inner{
   overflow-x: hidden;
   overflow-y: scroll;
   height: 200px;
