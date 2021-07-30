@@ -22,10 +22,8 @@
 
   <div class="form-group">
     <div class="form-tag">カテゴリー</div>
-    <%= form.collection_select(:category_id, Category2.all, :id, :name, {}, {class:"genre-select"}) %>
+    <%= form.collection_select(:category2_id, Category2.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
-
-  
 
  <div class="cook-send">
     <%= form.submit "Send", class:"register-red-btn" %>

@@ -8,5 +8,6 @@ class Getmoney < ApplicationRecord
     validates :amount
     validates :start_time
   end
-  validates :category_id, numericality: { other_than: 1 }
+  validates :category2_id, numericality: { other_than: 1 }
 end
+ca
