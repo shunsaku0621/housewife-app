@@ -54,11 +54,11 @@
         <% if user_signed_in? && current_user.id == getmoney.user_id %>
           
           <div class="income-top">
-            <p class="income-time">
+            <p class="getmoney-time">
               <%= getmoney.start_time.strftime("%m月%d日") %>
             </p>
           </div>
-          <%= link_to edit_income_path(getmoney.id) do %>
+          <%= link_to  edit_getmoney_path(getmoney.id) do %>
 
             <div class="income-main">
 
