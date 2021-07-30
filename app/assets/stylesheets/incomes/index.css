@@ -23,6 +23,7 @@
 
 .income{
   text-align:center;
+  width:50%;
 }
 .income >h1{
   margin-bottom:10px;
@@ -48,4 +49,10 @@
 
 .income-memo{
   opacity: 0.5;
+}
+
+
+.record{
+  display:flex;
+  justify-content: center;
 }
