@@ -5,6 +5,7 @@ class IncomesController < ApplicationController
 
   def index
     @incomes = Income.order("created_at")
+    @getmoneys = Getmoney.order("created_at")
     my_page_show
     sum_income
     sum_getmoney
