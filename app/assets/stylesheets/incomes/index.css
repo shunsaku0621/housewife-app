@@ -34,11 +34,15 @@
   overflow-y: scroll;
   height: 200px;
 }
-
 .income-time{
-  background-color:#b8b8b8;
+  background-color:#FF69A3;
   opacity: 0.5;
+  color:black
+}
 
+.getmoney-time{
+  background-color:#66FFFF;
+  opacity: 0.5;
 }
 
 .income-main{
