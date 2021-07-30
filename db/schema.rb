@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2021_07_29_103407) do
 
   create_table "getmoneys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "amount", null: false
-    t.integer "category_id", null: false
+    t.integer "category2_id", null: false
     t.text "memo"
     t.datetime "start_time", null: false
     t.bigint "user_id"

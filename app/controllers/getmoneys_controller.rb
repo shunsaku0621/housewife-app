@@ -15,7 +15,7 @@ class GetmoneysController < ApplicationController
 
 
   def getmoney_params
-    params.require(:getmoney).permit(:amount, :memo, :category_id, :start_time).merge(user_id: current_user.id)
+    params.require(:getmoney).permit(:amount, :memo, :category2_id, :start_time).merge(user_id: current_user.id)
   end
 
 end
