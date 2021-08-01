@@ -17,6 +17,14 @@
   align-items: center;
   justify-content:space-around;
 }
+
+.income-sum-getmoney{
+  color:blue;
+}
+.income-sum-income{
+  color:red;
+}
+
 .income-sum li{
   text-align: center;
 }
