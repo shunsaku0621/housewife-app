@@ -25,6 +25,14 @@
   color:red;
 }
 
+.plus{
+  color:blue;
+}
+
+.minus{
+  color:red;
+}
+
 .income-sum li{
   text-align: center;
 }
