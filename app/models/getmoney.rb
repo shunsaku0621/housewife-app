@@ -10,4 +10,3 @@ class Getmoney < ApplicationRecord
   end
   validates :category2_id, numericality: { other_than: 1 }
 end
-ca
