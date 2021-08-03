@@ -28,7 +28,7 @@ Password : yyyyyyy7
 
 # DEMO
 ### トップページ
-![主婦](https://user-images.githubusercontent.com/79575206/123580245-5e6bca00-d814-11eb-8731-c765d7c3e3ef.jpeg)
+![主婦](https://user-images.githubusercontent.com/79575206/127951507-1f86cf48-3385-4528-afbb-f681c9e8c8ee.png)
 #### 概要
 いろいろな機能に飛べるようにホームのページを実装させていただきました。    
 トップページから各機能へアクセスできるような作りになっており、シンプルなデザインにさせていただきました。また、ヘッダーのホームボタンでこのトップページにリダイレクトされるようにしております。
