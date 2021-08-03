@@ -118,8 +118,8 @@ Password : yyyyyyy7
 
 
 ### 家計簿表示  
-![家計簿トップページ](https://user-images.githubusercontent.com/79575206/127952879-89f8c267-27e3-47f2-a80f-af90d583ae1d.png)
-![家計簿トップページ](https://user-images.githubusercontent.com/79575206/127952929-7939f265-7f39-4860-becd-617cfc2a910b.png)
+![家計簿トップページ](https://user-images.githubusercontent.com/79575206/127953289-bc62c73d-1484-464b-9070-4f063f484693.png)
+![家計簿トップページ](https://user-images.githubusercontent.com/79575206/127953313-4fdd4c58-743f-43ef-86e5-71c2690a21bb.png)
 
 
 # 工夫したポイント
