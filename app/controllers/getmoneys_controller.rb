@@ -31,6 +31,9 @@ class GetmoneysController < ApplicationController
 
 
   def destroy
+    @getmoney.destroy
+    flash[:notice] = '支出を削除しました'
+    redirect_to incomes_path
   end
 
 
