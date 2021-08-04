@@ -1,6 +1,7 @@
 class GetmoneysController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_getmoney, only: [:edit, :update]
+  before_action :set_getmoney, only: [:edit, :update, :destroy]
+  before_action :not_user_do_getmoney, only: [:edit, :update, :destroy]
 
 
   def new
@@ -29,6 +30,13 @@ class GetmoneysController < ApplicationController
   end
 
 
+  def destroy
+    @getmoney.destroy
+    flash[:notice] = '支出を削除しました'
+    redirect_to incomes_path
+  end
+
+
   private
   def getmoney_params
     params.require(:getmoney).permit(:amount, :memo, :category2_id, :start_time).merge(user_id: current_user.id)
@@ -36,5 +44,11 @@ class GetmoneysController < ApplicationController
 
   def set_getmoney
     @getmoney = Getmoney.find(params[:id])
+  end
+
+  def not_user_do_getmoney
+    unless current_user.id == @getmoney.user_id
+      redirect_to incomes_path
+    end
   end
 end

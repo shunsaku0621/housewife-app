@@ -31,3 +31,6 @@
     <%= form.submit "Send", class:"register-red-btn" %>
  </div>
 <% end %>
+
+
+<%= link_to '消去',getmoney_path(@getmoney.id), method: :delete, data: { confirm: '削除しますか？' } %>
