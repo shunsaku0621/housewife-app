@@ -1,9 +1,5 @@
-
-
-
-
 <div class='form-header'>
-  <h1 class="form-header-text">予定登録</h1>
+  <h1 class="form-header-text">支出登録</h1>
 </div>
 
 <%= form_with(model: @income, local: true) do |form| %>
@@ -35,3 +31,6 @@
     <%= form.submit "Send", class:"register-red-btn" %>
  </div>
 <% end %>
+
+
+<%= link_to '消去',income_path(@income.id), method: :delete, data: { confirm: '削除しますか？' } %>

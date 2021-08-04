@@ -1,7 +1,7 @@
 class IncomesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_income, only: [:edit, :update]
-  before_action :not_user_do_income, only: [:edit, :update]
+  before_action :set_income, only: [:edit, :update, :destroy]
+  before_action :not_user_do_income, only: [:edit, :update, :destroy]
 
   def index
     @incomes = Income.order("created_at")
@@ -35,6 +35,12 @@ class IncomesController < ApplicationController
     else 
       render "edit"
     end
+  end
+
+  def destroy
+    @income.destroy
+    flash[:notice] = '支出を削除しました'
+    redirect_to incomes_path
   end
 
 
