@@ -1,3 +1,6 @@
+<div class="edit-incomes">
+
+
 <div class='form-header'>
   <h1 class="form-header-text">支出登録</h1>
 </div>
@@ -32,5 +35,8 @@
  </div>
 <% end %>
 
+<div class="delete-income">
+  <%= link_to 'この収支を削除',income_path(@income.id), method: :delete, data: { confirm: '削除しますか？' }, class:"delete-link" %>
+</div>
 
-<%= link_to '消去',income_path(@income.id), method: :delete, data: { confirm: '削除しますか？' } %>
+</div>

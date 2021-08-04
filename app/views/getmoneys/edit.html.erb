@@ -32,5 +32,6 @@
  </div>
 <% end %>
 
-
-<%= link_to '消去',getmoney_path(@getmoney.id), method: :delete, data: { confirm: '削除しますか？' } %>
+<div class="delete-income">
+  <%= link_to 'この収支を削除',getmoney_path(@getmoney.id), method: :delete, data: { confirm: '削除しますか？' }, class:"delete-link" %>
+</div>
