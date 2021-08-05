@@ -18,6 +18,7 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(income_params)
     if @income.save
+      flash[:notice] = '支出を登録しました'
       redirect_to incomes_path
     else 
       render :new
@@ -30,7 +31,7 @@ class IncomesController < ApplicationController
 
   def update
     if @income.update(income_params)
-      flash[:notice] = '家計簿を編集しました'
+      flash[:notice] = '支出を編集しました'
       redirect_to incomes_path
     else 
       render "edit"

@@ -11,6 +11,7 @@ class GetmoneysController < ApplicationController
   def create
     @getmoney = Getmoney.new(getmoney_params)
     if @getmoney.save
+      flash[:notice] = '収入を登録しました'
       redirect_to incomes_path
     else 
       render :new
@@ -32,7 +33,7 @@ class GetmoneysController < ApplicationController
 
   def destroy
     @getmoney.destroy
-    flash[:notice] = '支出を削除しました'
+    flash[:notice] = '収入を削除しました'
     redirect_to incomes_path
   end
 
