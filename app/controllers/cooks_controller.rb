@@ -1,5 +1,5 @@
 class CooksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:show]
   before_action :set_cook, only: [:edit, :update, :destroy, :show]
   def index
     @cooks = Cook.includes(:user).order(created_at: :desc).page(params[:page]).per(5)

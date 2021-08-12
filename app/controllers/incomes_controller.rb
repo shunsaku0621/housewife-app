@@ -1,5 +1,5 @@
 class IncomesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   before_action :set_income, only: [:edit, :update, :destroy]
   before_action :not_user_do_income, only: [:edit, :update, :destroy]
 
