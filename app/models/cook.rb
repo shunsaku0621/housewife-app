@@ -3,7 +3,7 @@ class Cook < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_one_attached :image
   has_many :likes, dependent: :destroy
-  has_many :reviews, dependent: :destoroy
+  has_many :reviews, dependent: :destroy
 
   
   with_options presence: true do
