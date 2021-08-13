@@ -23,6 +23,7 @@ class CooksController < ApplicationController
 
 
   def show
+    @review = Review.new
   end
 
 
