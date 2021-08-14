@@ -19,10 +19,23 @@
   margin-right:10px;
 }
 
-.rating-value-display{
-}
 
 .cook-review-button{
   display: block;
   margin: 0 auto;
+}
+
+.rating-box .ratings .far{
+  font-size:25px;
+  color:#fc0;
+  cursor: pointer;
+}
+
+.rating-value-display{
+  font-size:15px;
+}
+
+.cook-review-button{
+  padding-right: 70px;
+  padding-left: 70px;
 }
