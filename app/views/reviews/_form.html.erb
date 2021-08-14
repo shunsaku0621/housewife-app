@@ -10,13 +10,12 @@
         <span class="far fa-star" id="star"></span>
       </div>
       <div class="rating-value-display">
-        <span id="rating-value-display">0</span>
-        /5
+        <span id="rating-value-display">0</span>/5
       </div>
     </div>
     <%= f.hidden_field :cook_id, value: cook.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_field :content, class: "textarea" %>
-    <%= f.submit "保存", class: "button" %>
+    <%= f.text_area :content, class: "textarea" %>
+    <%= f.submit "保存", class: "cook-review-button" %>
   <% end %>
 </div>

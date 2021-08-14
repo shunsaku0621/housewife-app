@@ -1,0 +1,28 @@
+.cook-reviews{
+  margin-top:30px;
+  text-align:center;
+  color:green;
+}
+
+.rating-box{
+  text-align:center;
+  background-color:greenyellow;
+  margin-top:10px;
+}
+
+.main-rating{
+  display: flex;
+  justify-content: center;
+}
+.ratings{
+  margin-bottom:10px;
+  margin-right:10px;
+}
+
+.rating-value-display{
+}
+
+.cook-review-button{
+  display: block;
+  margin: 0 auto;
+}
