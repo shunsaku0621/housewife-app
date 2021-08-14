@@ -1,4 +1,4 @@
-function post() {
+function post (){
   const stars = document.querySelector(".ratings").children;
   const ratingValue = document.getElementById("rating-value");
   const ratingValueDisplay = document.getElementById("rating-value-display");
@@ -13,12 +13,12 @@ function post() {
         console.log(stars.length)
         // まず全て星をくり抜く
         stars[j].classList.remove("far fa-star");
-        stars[j].classList.add("fas fa-star");
+        stars[j].classList.add("fa-star-o");
       }
       // そのあと星の数だけ以下の関数が繰り返される。
       for(let j=0; j<=i; j++){
         console.log(stars.length)
-        stars[j].classList.remove("fas fa-star");
+        stars[j].classList.remove("fa-star-o");
         // カーソルが乗った星まで星を塗りつぶす
         stars[j].classList.add("far fa-star");
       }
@@ -36,15 +36,15 @@ function post() {
       for(let j=0; j<stars.length; j++){
         // まず全ての星をくり抜く
         stars[j].classList.remove("far fa-star");
-        stars[j].classList.add("fas fa-star");
+        stars[j].classList.add("fa-star-o");
       }
       for(let j=0; j<=index; j++){
         // クリックされている星まで塗りつぶす
-        stars[j].classList.remove("fas fa-star");
+        stars[j].classList.remove("fa-star-o");
         stars[j].classList.add("far fa-star");
       }
     })
   }
 };
 
-window.addEventListener('load', post)
+window.addEventListener('load', post);
