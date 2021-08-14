@@ -1,0 +1,21 @@
+<p class="cook-reviews">レビューを書く</p>
+<div class="rating-box">
+  <%= form_with model: review, url: cook_reviews_path(cook), local: true do |f| %>
+    <div class="main-rating">
+      <div class="ratings">
+        <span class="far fa-star" id="star"></span>
+        <span class="far fa-star" id="star"></span>
+        <span class="far fa-star" id="star"></span>
+        <span class="far fa-star" id="star"></span>
+        <span class="far fa-star" id="star"></span>
+      </div>
+      <div class="rating-value-display">
+        <span id="rating-value-display">0</span>/5
+      </div>
+    </div>
+    <%= f.hidden_field :cook_id, value: cook.id %>
+    <%= f.hidden_field :score, id: "rating-value" %>
+    <%= f.text_area :content, class: "textarea" %>
+    <%= f.submit "保存", class: "cook-review-button" %>
+  <% end %>
+</div>
