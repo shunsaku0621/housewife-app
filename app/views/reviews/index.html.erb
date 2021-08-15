@@ -1,26 +1,34 @@
-<section class="section mt-6">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <div class="card mb-6">
+<%= render "shared/header" %>
+
+<section class="section">
+  <div class="review-container">
+    <div class="columns">
+
+      <div class="column">
+        <div class="review-card">
+
           <header class="card-header">
-            <p class="card-header-title">
+            <p class="review-card-header-title">
               <%= @cook.name %>
             </p>
           </header>
+
           <div class="card-content">
             <div class="content average-score">
               <div class="star-rating mb-2">
-                <div class="star-rating-front" style="width: %">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
+                <div class="review-star-rating-front" style="width: %">★★★★★</div>
+                <div class="review-star-rating-back">★★★★★</div>
               </div>
-              <div class="average-score-display ml-3 pt-2">
+              <div class="review-average-score">
                 点（<%= @cook.reviews.count %>件のレビュー）
               </div>
             </div>
           </div>
+
         </div>
-        <table class="table is-fullwidth has-text-centered">
+
+
+        <table class="review-table">
           <thead>
             <tr>
               <th>ユーザー</th><th>点数</th><th>内容</th>
@@ -36,6 +44,8 @@
             <% end %>
           </tbody>
         </table>
+
+
       </div>
     </div>
   </div>
