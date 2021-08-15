@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   def index
+    @cook = Cook.find(params[:cook_id])
+    @reviews = @cook.reviews
   end
   
   def create
