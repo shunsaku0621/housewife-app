@@ -17,5 +17,6 @@
     <%= f.hidden_field :score, id: "rating-value" %>
     <%= f.text_area :content, class: "textarea" %>
     <%= f.submit "保存", class: "cook-review-button" %>
+    <%= link_to "他のレビューを見る", cook_reviews_path(cook), class: "cook-review-button" %>
   <% end %>
 </div>
