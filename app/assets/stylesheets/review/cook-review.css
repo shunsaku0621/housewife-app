@@ -6,7 +6,7 @@
 
 .rating-box{
   text-align:center;
-  background-color:greenyellow;
+  /* background-color:greenyellow; */
   margin-top:10px;
 }
 
@@ -25,7 +25,7 @@
   margin: 0 auto;
 }
 
-.rating-box .ratings .far{
+.rating-box .ratings .fa-star{
   font-size:25px;
   color:#fc0;
   cursor: pointer;
