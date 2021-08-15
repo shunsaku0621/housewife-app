@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to cook_reviews_path(@review.cook)
     else
+      @cook = Cook.find(params[:cook_id])
       render "cooks/show"
     end
   end
